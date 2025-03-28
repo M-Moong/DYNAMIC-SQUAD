@@ -1,0 +1,32 @@
+name: Semantic-release
+
+on:
+    push:
+        branches: ["main"]
+
+permissions:
+    contents: read
+
+jobs:
+    release:
+        name: release
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            issues: write
+            pull-requests: write
+            id-token: write
+        steps:
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v3
+              with:
+                  version: 9
+            - uses: actions/setup-node@v4
+              with:
+                  cache: pnpm
+                  node-version: "lts/*"
+            - run: pnpm install
+            - run: pnpm run build
+            - run: npx semantic-release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
