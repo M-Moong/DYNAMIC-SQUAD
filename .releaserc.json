@@ -1,0 +1,104 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" },
+          { "type": "docs", "release": "patch" },
+          { "type": "style", "release": "patch" },
+          { "type": "chore", "release": false },
+          { "type": "refactor", "release": "patch" },
+          { "type": "merge", "release": "patch" },
+          { "type": "deploy", "release": "patch" },
+          { "type": "remove", "release": false },
+          { "type": "move", "release": false }
+        ],
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+        }
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat",
+              "section": "✨ FEATURES",
+              "hidden": false
+            },
+            {
+              "type": "fix",
+              "section": "🐛 BUG FIXES",
+              "hidden": false
+            },
+            {
+              "type": "docs",
+              "section": "📚 DOCUMENTATION",
+              "hidden": false
+            },
+            {
+              "type": "style",
+              "section": "💄 STYLES",
+              "hidden": false
+            },
+            {
+              "type": "chore",
+              "section": "🛠️ CHORES",
+              "hidden": true
+            },
+            {
+              "type": "refactor",
+              "section": "♻️ REFACTOR",
+              "hidden": false
+            },
+            {
+              "type": "merge",
+              "section": "💥 MERGES",
+              "hidden": true
+            },
+            {
+              "type": "deploy",
+              "section": "🚀 DEPLOYMENTS",
+              "hidden": true
+            },
+            {
+              "type": "remove",
+              "section": "🔥 REMOVE",
+              "hidden": false
+            },
+            { "type": "move", "section": "🚚 MOVE", "hidden": true }
+          ]
+        },
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+        },
+        "writerOpts": {
+          "commitsSort": ["subject", "scope"]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# CHANGELOG"
+      }
+    ],
+    ["@semantic-release/npm", { "npmPublish": false }],
+    "@semantic-release/github",
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
