@@ -21,6 +21,14 @@ export default [
         ecmaFeatures: {
           jsx: true
         }
+      },
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly'
       }
     },
     rules: {
@@ -34,15 +42,6 @@ export default [
       react: {
         version: 'detect'
       }
-    }
-  },
-  {
-    name: 'Global Variables',
-    globals: {
-      window: 'readonly',
-      document: 'readonly',
-      setInterval: 'readonly',
-      setTimeout: 'readonly'
     }
   }
 ];
