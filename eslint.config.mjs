@@ -23,12 +23,6 @@ export default [
         }
       }
     },
-    globals: {
-      window: 'readonly',
-      document: 'readonly',
-      setInterval: 'readonly',
-      setTimeout: 'readonly'
-    },
     rules: {
       'no-unused-vars': 'warn',
       'no-console': 'warn',
@@ -40,6 +34,15 @@ export default [
       react: {
         version: 'detect'
       }
+    }
+  },
+  {
+    name: 'Global Variables',
+    globals: {
+      window: 'readonly',
+      document: 'readonly',
+      setInterval: 'readonly',
+      setTimeout: 'readonly'
     }
   }
 ];
