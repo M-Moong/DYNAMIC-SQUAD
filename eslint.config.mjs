@@ -23,8 +23,11 @@ export default [
         }
       }
     },
-    env: {
-      browser: true
+    globals: {
+      window: 'readonly',
+      document: 'readonly',
+      setInterval: 'readonly',
+      setTimeout: 'readonly'
     },
     rules: {
       'no-unused-vars': 'warn',
