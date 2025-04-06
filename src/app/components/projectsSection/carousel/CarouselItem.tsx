@@ -6,7 +6,7 @@ interface ProjectProps {
 
 export default function CarouselItem({ project }: { project: ProjectProps }) {
   return (
-    <div className={`h-96 min-w-[60%] ${project.bg}`}>
+    <div className={`h-96 shrink-0 grow-0 basis-[50%] ${project.bg}`}>
       <div></div>
     </div>
   );
