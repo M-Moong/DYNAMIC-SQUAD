@@ -1,3 +1,5 @@
+import ImageCarousel from './components/ImageCarousel';
+
 export default function Home() {
   return (
     <>
@@ -5,6 +7,7 @@ export default function Home() {
         <span className="font-bold text-blue-400">Intro</span> Page
         <span className="text-blue-300">.</span>
       </div>
+      <ImageCarousel />
     </>
   );
 }

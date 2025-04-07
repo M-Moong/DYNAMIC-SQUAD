@@ -10,7 +10,7 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
   const [loadingComplete, setLoadingComplete] = useState(false);
 
   useEffect(() => {
-    const duration = 1300;
+    const duration = 1000;
     const interval = 10;
     const steps = duration / interval;
     let currentStep = 0;
@@ -22,8 +22,10 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
 
       if (newProgress >= 100) {
         clearInterval(timer);
-        setLoadingComplete(true);
-        setTimeout(() => setShowSplash(false), 800);
+        setTimeout(() => {
+          setLoadingComplete(true);
+          setTimeout(() => setShowSplash(false), 1000);
+        }, 200);
       }
     }, interval);
 
@@ -39,6 +41,7 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
           className="fixed inset-0 z-50 flex flex-col justify-end bg-black"
           animate={loadingComplete ? { y: '-100%' } : { y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
+          exit={{ opacity: 0 }}
           aria-live="polite"
           aria-label={`로딩 중, ${progress}% 완료`}
         >
