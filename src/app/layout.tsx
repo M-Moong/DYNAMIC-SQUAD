@@ -1,15 +1,21 @@
+import React from 'react';
 import SplashScreen from './components/SplashScreen';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Open_Sans, Montserrat, Noto_Serif_Display } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const openSans = Open_Sans({
+  variable: '--font-open-sans',
   subsets: ['latin']
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin']
+});
+
+const notoSerifDisplay = Noto_Serif_Display({
+  variable: '--font-noto-serif-display',
   subsets: ['latin']
 });
 
@@ -25,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${openSans.variable} ${montserrat.variable} ${notoSerifDisplay.variable} antialiased`}>
         <SplashScreen>{children}</SplashScreen>
       </body>
     </html>

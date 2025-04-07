@@ -1,1 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@layer utilities {
+  .open-sans {
+    font-family: var(--font-open-sans), sans-serif;
+  }
+
+  .montserrat {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+
+  .noto-serif-display {
+    font-family: var(--font-noto-serif-display), serif;
+  }
+}
