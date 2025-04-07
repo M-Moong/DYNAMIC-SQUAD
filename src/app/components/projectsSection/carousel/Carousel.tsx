@@ -1,5 +1,4 @@
 'use client';
-
 import useEmblaCarousel from 'embla-carousel-react';
 import CarouselItem from './CarouselItem';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -83,7 +82,7 @@ export default function Carousel() {
               animate={{ y: 0, opacity: 1, transition: { duration: 0.4, ease: 'easeOut' } }}
               exit={{ y: -150, opacity: 0, transition: { duration: 0.2, ease: 'easeOut' } }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="mx-auto max-w-[90%] text-center text-9xl uppercase"
+              className="noto-serif-display mx-auto max-w-[90%] text-center text-9xl uppercase"
             >
               {projects[selectedIndex]?.title}
             </motion.div>
