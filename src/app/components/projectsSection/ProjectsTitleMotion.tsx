@@ -14,10 +14,8 @@ export default function ProjectsTitleMotion({ scrollYProgress }: ProjectsTitleMo
     stiffness: 50,
     damping: 20
   });
-  const firstTextScale = useSpring(useTransform(scrollYProgress, [0.5, 0.6, 0.7], [1, 10, 50]), {
-    stiffness: 200,
-    damping: 20
-  });
+  const firstTextScale = useTransform(scrollYProgress, [0.65, 0.7, 0.75], [1, 10, 35]);
+
   const containerBackground = useTransform(
     scrollYProgress,
     [0, 0.6, 0.7, 0.8],
