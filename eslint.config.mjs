@@ -39,6 +39,14 @@ export default [
         ecmaFeatures: {
           jsx: true
         }
+      },
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly'
       }
     },
     rules: {
