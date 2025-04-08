@@ -6,11 +6,11 @@ import { NextButton, PrevButton, usePrevNextButtons } from './CarouselButton';
 import { AnimatePresence, motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 const projects = [
-  { id: 0, title: 'title 1', bg: 'bg-pink-100' },
-  { id: 1, title: 'title 2', bg: 'bg-pink-200' },
-  { id: 2, title: 'title 3', bg: 'bg-fuchsia-100' },
-  { id: 3, title: 'title 4', bg: 'bg-fuchsia-200' },
-  { id: 4, title: 'title 5', bg: 'bg-violet-100' }
+  { id: 0, title: 'title 1', bg: '/projects/img1.jpg' },
+  { id: 1, title: 'title 2', bg: '/projects/img2.jpg' },
+  { id: 2, title: 'title 3', bg: '/projects/img3.jpg' },
+  { id: 3, title: 'title 4', bg: '/projects/img4.jpg' },
+  { id: 4, title: 'title 5', bg: '/projects/img5.jpg' }
 ];
 
 export default function Carousel() {
