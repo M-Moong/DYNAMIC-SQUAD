@@ -1,3 +1,6 @@
+import Carousel from './components/projectsSection/carousel/Carousel';
+import ProjectsSection from './components/projectsSection/ProjectsSection';
+
 export default function Home() {
   return (
     <>
@@ -5,6 +8,8 @@ export default function Home() {
         <span className="font-bold text-blue-400">Intro</span> Page
         <span className="text-blue-300">.</span>
       </div>
+      <ProjectsSection />
+      <Carousel />
     </>
   );
 }
