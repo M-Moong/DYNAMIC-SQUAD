@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@utilities {
+@layer utilities {
   .open-sans {
     font-family: var(--font-open-sans), sans-serif;
   }
